@@ -65,7 +65,7 @@
     {
         #attempt to find user in database and login, return Json
         $stmt = $conn->prepare("SELECT ID,firstName,lastName FROM Users WHERE Login=? AND Password =?");
-		$stmt->bind_param("ss", $inData["login"], $inData["password"]);
+		$stmt->bind_param("ss", $inData["login"], md5($inData["password"]));
 		$stmt->execute();
 		$result = $stmt->get_result();
 

@@ -93,7 +93,7 @@
 		{
             #New addes User to Database if not found, return user info as Json
             $stmt = $conn->prepare("INSERT INTO Users (Login, Password, firstName, lastName) VALUES(?,?,?,?)");
-            $stmt->bind_param("ssss", $inData["login"], $inData["password"], $inData["firstName"], $inData["lastName"]);
+            $stmt->bind_param("ssss", $inData["login"], md5($inData["password"]), $inData["firstName"], $inData["lastName"]);
             $stmt->execute();
             returnWithInfo( $inData["firstName"], $inData["lastName"], $conn->insert_id );
 		}
