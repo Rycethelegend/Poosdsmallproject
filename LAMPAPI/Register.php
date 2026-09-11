@@ -1,4 +1,62 @@
+
+
+
+
 <?php
+
+    /*
+
+    For Swagger Documentation, see below:
+
+    /Register.php:
+        post:
+        tags:
+            - Users
+        summary: Register's a new user into Contact Manager
+        operationId: doRegister
+        description: Registers a user into Contact Manager
+        consumes:
+            - application/json
+        produces:
+            - application/json
+        parameters:
+            - in: body
+            name: registerItem
+            description: Register
+            schema:
+                $ref: '#/definitions/Register'
+        responses:
+            '200':
+            description: OK
+            '404':
+            description: URL Not Found
+            '500':
+            description: Server Error
+
+    definitions:
+
+    Register:
+        type: object
+        required:
+        - login
+        - password
+        properties:
+        login:
+            type: string
+            example: fred
+        password:
+            type: string
+            example: secret
+
+
+
+
+
+    */
+
+
+
+
     #Register.php
 
 

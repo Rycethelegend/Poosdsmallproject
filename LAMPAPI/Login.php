@@ -1,5 +1,50 @@
 <?php
 
+    /*
+    For Swagger Documentation, see below:
+
+    /Login.php:
+        post:
+        tags:
+            - Users
+        summary: Logins into Contact Manager
+        operationId: dologin
+        description: Logs in to Contact Manager
+        consumes:
+            - application/json
+        produces:
+            - application/json
+        parameters:
+            - in: body
+            name: loginItem
+            description: Login
+            schema:
+                $ref: '#/definitions/Login'
+        responses:
+            '200':
+            description: OK
+            '404':
+            description: URL Not Found
+            '500':
+            description: Server Error
+
+    definitions:
+    Login:
+        type: object
+        required:
+        - login
+        - password
+        properties:
+        login:
+            type: string
+            example: fred
+        password:
+            type: string
+            example: secret        
+
+    */
+
+
     #get input data from request
     $inData = getRequestInfo();
 
