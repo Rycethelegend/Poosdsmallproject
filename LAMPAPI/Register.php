@@ -1,4 +1,6 @@
 <?php
+    #Register.php
+
 
     #get input data from request
     $inData = getRequestInfo();
@@ -18,20 +20,24 @@
 	}
     else
     {
-        #attempt to find user in database and login, return Json
-        $stmt = $conn->prepare("SELECT ID,firstName,lastName FROM Users WHERE Login=? AND Password =?");
-		$stmt->bind_param("ss", $inData["login"], $inData["password"]);
+        #attempt to find user in database
+        $stmt = $conn->prepare("SELECT ID,firstName,lastName FROM Users WHERE Login=?");
+		$stmt->bind_param("ss", $inData["login"]);
 		$stmt->execute();
 		$result = $stmt->get_result();
 
-        #Attempt to get user info from database, if found return info, else return error with Json
+        #Attempt to get user info from database, if not found, then add user to database.
         if( $row = $result->fetch_assoc()  )
 		{
-			returnWithInfo( $row['firstName'], $row['lastName'], $row['ID'] );
+			returnWithError("Existing User, please login");
 		}
 		else
 		{
-			returnWithError("No Records Found");
+            #New addes User to Database if not found, return user info as Json
+            $stmt = $conn->prepare("INSERT INTO Users (Login, Password, firstName, lastName) VALUES(?,?,?,?)");
+            $stmt->bind_param("ssss", $inData["login"], $inData["password"], $inData["firstName"], $inData["lastName"]);
+            $stmt->execute();
+            returnWithInfo( $inData["firstName"], $inData["lastName"], $conn->insert_id );
 		}
 
         #done with database, close connection
