@@ -54,7 +54,7 @@
 
 
     #Attempt to connect to database
-	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "Poosdbase"); 	
+	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331s", "Poosdbase"); 	
 
 	if( $conn->connect_error )
 	{
