@@ -1,0 +1,64 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #6f6f6f;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+	text-align: center;
+	color: white;
+	padding: 20px 0 10px 0;
+}
+
+.box {
+	max-width: 420px;
+	margin: 20px auto;
+	background-color: #b9b9b9;
+	padding: 30px;
+	border-radius: 6px;
+}
+
+.message {
+	text-align: center;
+	color: #8b0000;
+	font-weight: bold;
+	margin-bottom: 15px;
+	min-height: 20px;
+}
+
+/* Texts */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+	width: 100%;
+    text-align: center;
+	box-sizing: border-box;
+	padding: 12px;
+	margin-bottom: 15px;
+	border: 1px solid #333;
+	border-radius: 20px;
+	font-size: 16px;
+}
+
+/* Buttons */
+button {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #333;
+	border-radius: 20px;
+	background-color: #eee;
+	font-size: 16px;
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+
+button:hover {
+	background-color: #ddd;
+}
+
+/* Links */
+.link-row {
+	text-align: center;
+	margin-top: 10px;
+}
