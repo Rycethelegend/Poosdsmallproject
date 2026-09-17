@@ -1,0 +1,29 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Contact Manager - Sign Up</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body onload="redirectIfLoggedIn()">
+
+	<h1>Create An Account</h1>
+
+	<div class="box">
+		<div class="message" id="registerResult"></div>
+
+		<input type="text" id="regFirstName" placeholder="First Name">
+		<input type="text" id="regLastName" placeholder="Last Name">
+		<input type="text" id="regLogin" placeholder="Choose a Username">
+		<input type="password" id="regPassword" placeholder="Password">
+		<input type="password" id="regConfirmPassword" placeholder="Confirm Password">
+
+		<button onclick="doRegister()">Register</button>
+
+		<div class="link-row">
+			<a href="login.html">Already have an account? Log in</a>
+		</div>
+	</div>
+
+	<script src="js/code.js"></script>
+</body>
+</html>
