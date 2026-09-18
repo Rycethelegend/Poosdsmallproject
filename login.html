@@ -1,26 +1,78 @@
 <html>
+
 <head>
-	<meta charset="UTF-8">
-	<title>Contact Manager - Log In</title>
-	<link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <title>Contact Manager</title>
+    <link rel="stylesheet" href="css/natestyles.css">
 </head>
+
+<style>
+    .centerBox {
+        /*align-items: center;*/
+        margin: 32px;
+        display: flex;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        max-width: 800px;
+    }
+
+    .input {
+        border: none;
+        outline: none;
+        font-size: 16px;
+        width: 100%;
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .detailBox {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px;
+        background-color: #f07167;
+        border: 8px solid rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
+    }
+</style>
+
 <body onload="redirectIfLoggedIn()">
 
-	<h1>Personal Contact Manager Login</h1>
+    <div style="justify-items: center;">
 
-	<div class="box">
-		<div class="message" id="loginResult"></div>
+        <div class="centerBox">
 
-		<input type="text" id="loginName" placeholder="Username">
-		<input type="password" id="loginPassword" placeholder="Password">
+            <h2 style="text-align: center;">
+                Contact Manager Login
+            </h2>
 
-		<button onclick="doLogin()">Log In</button>
+            <div class="message" id="registerResult"></div>
 
-		<div class="link-row">
-			<a href="register.html">Don't have an account? Sign up</a>
-		</div>
-	</div>
+            <div class="detailBox">
+                <input class="input" type="text" id="regFirstName" placeholder="Username">
+                <input class="input" type="text" id="regLastName" placeholder="Password">
 
-	<script src="js/login.js"></script>
+                <div style="margin-top: 32px; display: flex; gap: 8px; justify-content: center; ">
+
+                    <button onclick="doLogin()" class="colorButton" style="background-color: black; ">
+                        <a style="color: white;">
+                            Login
+                        </a>
+                    </button>
+
+                    <button class="colorButton" style="background-color: transparent; border: 4px solid black;">
+                        <a href="register.html" style="color: black;">
+                            Don't have an account? Sign up
+                        </a>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/login.js"></script>
 </body>
+
 </html>

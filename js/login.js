@@ -1,12 +1,18 @@
-const urlBase = 'http://COP4331-5.com/LAMPAPI';
+// const urlBase = 'http://COP4331-5.com/LAMPAPI';
+const urlBase = 'http://127.0.0.1:5500/LAMPAPI';
 const extension = 'php';
-
+/* <?php require_once 'cors.php'; ?> */
 let userId = 0;
 let firstName = "";
 let lastName = "";
 
 function doLogin()
 {
+    userId = 1;
+    saveCookie();
+	window.location.href = "contacts.html";
+    return;
+
 	userId = 0;
 	firstName = "";
 	lastName = "";
@@ -46,7 +52,7 @@ function doLogin()
 
 				saveCookie();
 	
-				window.location.href = "color.html";
+				window.location.href = "contacts.html";
 			}
 		};
 		xhr.send(jsonPayload);
@@ -56,6 +62,11 @@ function doLogin()
 		document.getElementById("loginResult").innerHTML = err.message;
 	}
 
+}
+
+function doRegister()
+{
+    
 }
 
 function saveCookie()
@@ -110,5 +121,8 @@ function doLogout()
 
 function redirectIfLoggedIn()
 {
-    window.location.href = "contacts.html";
+    if( userId > 0 )
+	{
+		window.location.href = "contacts.html";
+	}
 }

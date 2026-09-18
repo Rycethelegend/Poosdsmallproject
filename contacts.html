@@ -7,10 +7,6 @@
 </head>
 
 <style>
-    h1 {
-        font-size: 40px;
-    }
-
     .centerBox {
         /*align-items: center;*/
         margin: 32px;
@@ -39,7 +35,7 @@
         <button class="navbarButton">
             Contacts
         </button>
-        <button class="navbarButton">
+        <button id="logoutButton" class="navbarButton">
             Logout
         </button>
     </div>
@@ -48,9 +44,9 @@
 
         <div class="centerBox">
 
-            <h1 style="text-align: center;">
+            <h2 style="text-align: center;">
                 Contacts
-            </h1>
+            </h2>
 
             <div style="display: flex; align-items: center; width: 100%; gap: 16px;">
 
@@ -61,17 +57,18 @@
                 </div>
 
                 <button id="search-button" class="colorButton" value="Search" style="background-color: black;">
-                    <h2 style="color:white;">Search</h2>
+                    <h3 style="color:white;">Search</h3>
                 </button>
 
                 <button id="add" class="colorButton" value="Search"
                     style="background-color: transparent; border: 4px solid black">
-                    <h2 style="color:black;">Add</h2>
+                    <h3 style="color:black;">Add</h3>
                 </button>
 
             </div>
 
-            <div id="listRegion" style="height: 500px; width: 100%; background-color: #00afb9; border-radius: 32px;">
+            <div id="listRegion"
+                style="height: 500px; width: 100%; background-color: #00afb9; border-radius: 32px; display: flex; flex-direction: column;">
 
             </div>
 
@@ -81,33 +78,7 @@
     <div class="pane" id="detailPane">
         <div class="pane-inner">
 
-            <div class="detail-bar">
-                <button type="button" class="icon-btn" id="backBtn" aria-label="Back to all contacts">
-                    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="15 5 8 12 15 19"></polyline>
-                    </svg>
-                </button>
-
-                <div class="dropdown">
-                    <button type="button" class="icon-btn" id="detailMenuBtn" data-bs-toggle="dropdown"
-                        data-bs-auto-close="true" aria-expanded="false" aria-label="More options">
-                        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
-                            <circle cx="5" cy="12" r="1.9"></circle>
-                            <circle cx="12" cy="12" r="1.9"></circle>
-                            <circle cx="19" cy="12" r="1.9"></circle>
-                        </svg>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><button class="dropdown-item text-delete" type="button" id="detailDeleteBtn">Delete
-                                contact</button></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Rendered by js/contacts.js -->
-            <div id="detailRegion"></div>
-
+            
         </div>
     </div>
 
