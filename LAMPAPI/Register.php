@@ -1,7 +1,3 @@
-
-
-
-
 <?php
 
     /*
@@ -84,10 +80,19 @@
 		$stmt->execute();
 		$result = $stmt->get_result();
 
+
         #Attempt to get user info from database, if not found, then add user to database.
         if( $row = $result->fetch_assoc()  )
 		{
-			returnWithError("Existing User, please login");
+			returnWithError("Existing User, please login.");
+		} else
+
+
+       
+        #check if passwords match
+        if( $inData["password"] != $inData["confirm_password"]  )
+		{
+			returnWithError("Passwords do not match.");
 		}
 		else
 		{
