@@ -1,1 +1,6 @@
 # Poosdsmallproject
+
+
+
+-- GenAI use statement --
+
