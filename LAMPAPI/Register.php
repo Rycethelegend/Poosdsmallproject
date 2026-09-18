@@ -80,7 +80,7 @@
     {
         #attempt to find user in database
         $stmt = $conn->prepare("SELECT ID,firstName,lastName FROM Users WHERE Login=?");
-		$stmt->bind_param("ss", $inData["login"]);
+		$stmt->bind_param("s", $inData["login"]);
 		$stmt->execute();
 		$result = $stmt->get_result();
 
