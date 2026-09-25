@@ -95,7 +95,7 @@
     }*/
 </style>
 
-<body onload="requireLogin(); test();">
+<body onload="requireLogin(); query();">
 
     <template id="contactRowTemplate">
         <div class="listItem">
@@ -171,17 +171,18 @@
                     Contacts
                 </h2>
 
+                <h3 class="errorText" id="errorBox">Example error!</h3>
+
                 <div style="display: flex; align-items: center; width: 100%; gap: 16px;">
 
                     <div id="search" class="searchBox" style="width: 100%;">
                         <input
                             style="border: none; outline: none; background: transparent; font-size: 16px; width: 100%;"
-                            type="text" id="username" name="username" aria-describedby="username-help"
-                            placeholder="Search..." />
+                            type="text" id="searchText" aria-describedby="username-help" placeholder="Search..." />
                     </div>
 
                     <button id="search-button" class="colorButton" value="Search"
-                        style="background-color: black; padding-left: 8px;">
+                        style="background-color: black; padding-left: 8px;" onclick="query()">
 
                         <img src="images/searchWhite.svg">
                         <h3 style="color:white;">Search</h3>
@@ -189,7 +190,6 @@
 
                     <button id="add-button" class="colorButton" value="Add"
                         style="background-color: transparent; border: 4px solid black" onclick="openAddBox()">
-
 
                         <img src="images/adduser.svg">
                         <h3 style="color:black;">Add</h3>
@@ -238,61 +238,34 @@
 
                     </div>
 
-                    <div id="addButtons" style="display: none; justify-content: end; gap: 8px;">
-                        <button class="colorButton" onclick="saveContact()">
-                            <span>Save</span>
-                        </button>
-                        <button class="colorButton" onclick="closeAddBox()">
-                            <span>Cancel</span>
-                        </button>
+                    <div style="display: flex; justify-content: space-between;">
+                        <h3 class="errorText" id="addError"></h3>
+
+                        <div id="addButtons" style="display: none; justify-content: end; gap: 8px;">
+                            <button class="colorButton" onclick="saveContact()">
+                                <span>Save</span>
+                            </button>
+                            <button class="colorButton" onclick="closeAddBox()">
+                                <span>Cancel</span>
+                            </button>
+                        </div>
+
+                        <div id="editButtons" style="display: none; justify-content: end; gap: 8px;">
+                            <button class="colorButton" onclick="finishContactEdit()">
+                                <span>Save</span>
+                            </button>
+                            <button class="colorButton" onclick="closeAddBox()">
+                                <span>Cancel</span>
+                            </button>
+                        </div>
                     </div>
 
-                    <div id="editButtons" style="display: none; justify-content: end; gap: 8px;">
-                        <button class="colorButton" onclick="finishContactEdit()">
-                            <span>Save</span>
-                        </button>
-                        <button class="colorButton" onclick="closeAddBox()">
-                            <span>Cancel</span>
-                        </button>
-                    </div>
+
                 </div>
 
                 <div id="listRegion" class="listRegion">
-                    <div class="listItem">
-                        <div style="aspect-ratio: 1; background-color: #fef9ef; border-radius: 64px;">
-                        </div>
-                        <div style="display: flex; gap: 8px; flex-direction: column; justify-content: center;">
-                            <div style="display: flex; gap: 8px; ">
-                                <div class="infoField">
-                                    <p>Angela</p>
-                                </div>
-                                <div class="infoField">
-                                    <p>Lorry</p>
-                                </div>
-                            </div>
-                            <div style="display: flex; gap: 8px;">
-                                <div class="infoField">
-                                    <p>awesomeangela@gmail.com</p>
-                                </div>
-                                <div class="infoField">
-                                    <p>+1-305-598-2746</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div style="width: 100%; justify-items: end;">
-                            <div
-                                style="width: 40px; height: 100%; display: flex; flex-direction: column; justify-content: center; gap: 12px;">
-                                <button id="editButton" class="imageButton">
-                                    <img src="images/pencilwhite.svg" style="width: 100%;">
-                                </button>
-                                <button id="deleteButton" class="imageButton">
-                                    <img src="images/trashwhite.svg" style="width: 100%;">
-                                </button>
-                            </div>
-                        </div>
-
-                    </div>
+                    <h3 id="listError" style="text-align: center;">
+                    </h3>
                 </div>
             </div>
 

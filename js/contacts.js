@@ -15,6 +15,14 @@ function test() {
     renderList();
 }
 
+function query() {
+
+    clearError();
+    searchContacts();
+    renderList();
+}
+
+
 
 // SEARCH CONTACTS
 function findContactById(id) {
@@ -60,20 +68,28 @@ function searchContacts() {
     catch (err) {
 
         contacts = [];
-        // showListMessage(message);
+        showError(err.message);
     }
 }
 
 function renderList() {
 
+    const listError = document.getElementById("listError");
     const region = document.getElementById("listRegion");
+
     region.innerHTML = "";
 
+    // Dynamic error message
     if (contacts.length == 0) {
-        // showListMessage("No contacts here yet. Use Add to create one.");
+        const div = document.createElement("h3");
+
+        div.className = "errorText";
+        div.textContent = "No contacts. Try adding one!";
+        region.appendChild(div);
+
         return;
     }
-
+    
     const template = document.getElementById("contactRowTemplate");
 
     for (let i = 0; i < contacts.length; i++) {
@@ -140,8 +156,8 @@ function finishContactDelete() {
         xhr.send(jsonPayload);
     }
     catch (err) {
-        // document.getElementById("colorAddResult").innerHTML = err.message;
         // message: delete failed
+        showError(err.message);
     }
 }
 
@@ -190,7 +206,7 @@ function finishContactEdit() {
         xhr.send(jsonPayload);
     }
     catch (err) {
-        // document.getElementById("colorAddResult").innerHTML = err.message;
+        showError(err.message);
     }
 }
 
@@ -220,11 +236,27 @@ function saveContact() {
         };
         xhr.send(jsonPayload);
     }
-    catch (err) {
-        // document.getElementById("colorAddResult").innerHTML = err.message;
+    catch (err) 
+    {
+        showError(err.message);
     }
 }
 
+function showError(message)
+{
+    const errorBox = document.getElementById("errorBox");
+
+    errorBox.style.display = 'block';
+    errorBox.textContent = message;
+}
+
+function clearError()
+{
+    const errorBox = document.getElementById("errorBox");
+
+    errorBox.textContent = "";
+    errorBox.style.display = "none";
+}
 
 // UI MENUS
 function clearAddBox() 
@@ -238,6 +270,8 @@ function clearAddBox()
     lastNameBox.value = '';
     emailBox.value = '';
     phoneBox.value = '';
+
+    clearError();
 }
 
 function openDeleteBox() {

@@ -87,3 +87,9 @@ h2 {
     font-size: 16px;
     width: 100%;
 }
+
+.errorText {
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
