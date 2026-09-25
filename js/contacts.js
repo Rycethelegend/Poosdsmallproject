@@ -141,7 +141,7 @@ function finishContactDelete() {
     let tmp = { contactId: currentDeleteId, userId: userId };
 
     let jsonPayload = JSON.stringify(tmp);
-    let url = urlBase + '/EditContact.' + extension;
+    let url = urlBase + '/DeleteContact.' + extension;
 
     let xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
