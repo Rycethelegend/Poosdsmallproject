@@ -16,7 +16,7 @@
         # Search across FirstName, LastName, Phone, and Email for the logged-in UserID
         $stmt = $conn->prepare("SELECT ID, FirstName, LastName, Phone, Email FROM Contacts WHERE UserID=? AND (FirstName LIKE ? OR LastName LIKE ? OR Phone LIKE ? OR Email LIKE ?)");
         $searchVal = "%" . $inData["search"] . "%";
-        $stmt->bind_param("issss", $inData["userId"], $searchVal, $searchVal, $searchVal, $searchVal);
+        $stmt->bind_param("issss", $inData["userId"], $searchVal, $searchVal, $searchVal, $searchVal);  //take inputs from searching
         $stmt->execute();
         
         $result = $stmt->get_result();
