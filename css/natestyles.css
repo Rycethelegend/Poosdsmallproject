@@ -22,7 +22,7 @@ h2 {
 .navbar {
     height: 50px;
     background-color: #f07167;
-    border: black;
+    border: 1px, solid, black;
     border-bottom: 8px solid rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: end;
