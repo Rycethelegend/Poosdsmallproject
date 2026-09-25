@@ -27,6 +27,8 @@
     }
 
     .detailBox {
+        width: 100%;
+        max-width: 600px;
         display: flex;
         flex-direction: column;
         gap: 16px;
@@ -39,35 +41,46 @@
 
 <body onload="redirectIfLoggedIn()">
 
-    <div style="justify-items: center;">
+    <div style="padding: 32px; justify-items: center;">
+        <h2 style="text-align: center;">
+            Contact Manager Login
+        </h2>
 
-        <div class="centerBox">
+        <div class="detailBox">
+            <div class="searchBox">
+                <input 
+                    class="inputText"
+                    type="text" 
+                    id="regFirstName" 
+                    aria-describedby="username-help" 
+                    placeholder="Username..." />
+            </div>
 
-            <h2 style="text-align: center;">
-                Contact Manager Login
-            </h2>
+            <div class="searchBox">
+                <input 
+                    class="inputText"
+                    type="password" 
+                    id="regLastName" 
+                    aria-describedby="password-help" 
+                    placeholder="Password..." />
+            </div>
 
             <div class="message" id="registerResult"></div>
 
-            <div class="detailBox">
-                <input class="input" type="text" id="regFirstName" placeholder="Username">
-                <input class="input" type="text" id="regLastName" placeholder="Password">
+            <div style="display: flex; gap: 8px; justify-content: center; ">
 
-                <div style="margin-top: 32px; display: flex; gap: 8px; justify-content: center; ">
+                <button onclick="doLogin()" class="colorButton" style="background-color: black; ">
+                    <a style="color: white;">
+                        Login
+                    </a>
+                </button>
 
-                    <button onclick="doLogin()" class="colorButton" style="background-color: black; ">
-                        <a style="color: white;">
-                            Login
-                        </a>
-                    </button>
+                <button class="colorButton" style="background-color: transparent; border: 4px solid black;">
+                    <a href="register.html" style="color: black;">
+                        Don't have an account? Sign up
+                    </a>
+                </button>
 
-                    <button class="colorButton" style="background-color: transparent; border: 4px solid black;">
-                        <a href="register.html" style="color: black;">
-                            Don't have an account? Sign up
-                        </a>
-                    </button>
-
-                </div>
             </div>
         </div>
     </div>

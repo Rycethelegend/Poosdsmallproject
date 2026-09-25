@@ -45,6 +45,7 @@ h2 {
     background-color: #fed9b7;
     font-weight: bold;
     font-size: 16px;
+    gap: 8px;
 }
 
 .colorButton {
@@ -59,4 +60,30 @@ h2 {
     border: 4px solid rgba(0, 0, 0, 0.1);
     font-weight: bold;
     font-size: 16px;
+    gap: 8px;
+}
+
+.blurBox {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.searchBox {
+    display: flex;
+    padding-left: 16px;
+    height: 48px;
+    border-radius: 32px;
+    background-color: #fef9ef;
+    border: 4px solid black;
+}
+
+.inputText {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    width: 100%;
 }

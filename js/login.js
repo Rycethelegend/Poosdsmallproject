@@ -1,10 +1,14 @@
 // const urlBase = 'http://COP4331-5.com/LAMPAPI';
-const urlBase = 'http://127.0.0.1:5500/LAMPAPI';
+// const urlBase = 'http://127.0.0.1:5500/LAMPAPI';
+// const urlBase = 'http://161.35.14.108/LAMPAPI';
+
+const urlBase = '/LAMPAPI';
 const extension = 'php';
-/* <?php require_once 'cors.php'; ?> */
+
 let userId = 0;
 let firstName = "";
 let lastName = "";
+
 
 function doLogin()
 {
@@ -17,11 +21,11 @@ function doLogin()
 	firstName = "";
 	lastName = "";
 	
-	let login = document.getElementById("loginName").value;
-	let password = document.getElementById("loginPassword").value;
+	let login = document.getElementById("regFirstName").value;
+	let password = document.getElementById("regLastName").value;
 //	var hash = md5( password );
 	
-	document.getElementById("loginResult").innerHTML = "";
+	document.getElementById("registerResult").innerHTML = "";
 
 	let tmp = {login:login,password:password};
 //	var tmp = {login:login,password:hash};
@@ -77,6 +81,27 @@ function saveCookie()
 	document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
 }
 
+function loadCookie()
+{
+	userId = -1;
+	firstName = "";
+	lastName = "";
+
+	let splits = document.cookie.split(/[;,]/);
+	for (let i = 0; i < splits.length; i++)
+	{
+		let tokens = splits[i].trim().split("=");
+
+		if( tokens[0] == "firstName" )     { firstName = tokens[1]; }
+		else if( tokens[0] == "lastName" ) { lastName = tokens[1]; }
+		else if( tokens[0] == "userId" )   { userId = parseInt( tokens[1] ); }
+	}
+
+	if( isNaN(userId) ) { userId = -1; }
+
+	return userId > 0;
+}
+
 function readCookie()
 {
 	userId = -1;
@@ -110,19 +135,37 @@ function readCookie()
 	}
 }
 
+
 function doLogout()
 {
 	userId = 0;
 	firstName = "";
 	lastName = "";
+
 	document.cookie = "firstName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
-	window.location.href = "index.html";
+	document.cookie = "lastName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+	document.cookie = "userId= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+
+	window.location.replace("index.html");
+}
+
+function requireLogin()
+{
+	if( !loadCookie() )
+	{
+		window.location.replace("index.html");
+		return false;
+	}
+
+    // push the 20-minute expiry forward
+	saveCookie();   
+	return true;
 }
 
 function redirectIfLoggedIn()
 {
-    if( userId > 0 )
+	if( loadCookie() )
 	{
-		window.location.href = "contacts.html";
+		window.location.replace("contacts.html");
 	}
 }

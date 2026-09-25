@@ -27,6 +27,8 @@
     }
 
     .detailBox {
+        width: 100%;
+        max-width: 600px;
         display: flex;
         flex-direction: column;
         gap: 16px;
@@ -39,38 +41,53 @@
 
 <body onload="redirectIfLoggedIn()">
 
-    <div style="justify-items: center;">
+    <div style="padding: 32px; justify-items: center;">
+        <h2 style="text-align: center;">
+            Create An Account
+        </h2>
 
-        <div class="centerBox">
+        <div class="detailBox">
+            <div class="searchBox">
+                <input class="inputText"
+                    type="text" id="regFirstName" aria-describedby="first-name-help" placeholder="First name..." />
+            </div>
 
-            <h2 style="text-align: center;">
-                Create An Account
-            </h2>
+            <div class="searchBox">
+                <input class="inputText"
+                    type="text" id="regLastName" aria-describedby="last-name-help" placeholder="Last name..." />
+            </div>
+
+            <div class="searchBox">
+                <input class="inputText"
+                    type="text" id="regLogin" aria-describedby="username-help" placeholder="Choose Username..." />
+            </div>
+
+            <div class="searchBox">
+                <input class="inputText"
+                    type="password" id="regPassword" aria-describedby="password-help" placeholder="Choose Password..." />
+            </div>
+
+            <div class="searchBox">
+                <input class="inputText"
+                    type="password" id="regConfirmPassword" aria-describedby="confirm-password-help" placeholder="Confirm password..." />
+            </div>
 
             <div class="message" id="registerResult"></div>
 
-            <div class="detailBox">
-                <input class="input" type="text" id="regFirstName" placeholder="First Name">
-                <input class="input" type="text" id="regLastName" placeholder="Last Name">
-                <input class="input" type="text" id="regLogin" placeholder="Choose a Username">
-                <input class="input" type="password" id="regPassword" placeholder="Password">
-                <input class="input" type="password" id="regConfirmPassword" placeholder="Confirm Password">
+            <div style="display: flex; gap: 8px; justify-content: center; ">
 
-                <div style="margin-top: 32px; display: flex; gap: 8px; justify-content: center; ">
+                <button onclick="doRegister()" class="colorButton" style="background-color: black; ">
+                    <a style="color: white;">
+                        Login
+                    </a>
+                </button>
 
-                    <button onclick="doRegister()" class="colorButton" style="background-color: black; ">
-                        <a style="color: white;">
-                            Register
-                        </a>
-                    </button>
+                <button class="colorButton" style="background-color: transparent; border: 4px solid black;">
+                    <a href="login.html" style="color: black;">
+                        Already have an account? Log in
+                    </a>
+                </button>
 
-                    <button class="colorButton" style="background-color: transparent; border: 4px solid black;">
-                        <a href="login.html" style="color: black;">
-                            Already have an account? Log in
-                        </a>
-                    </button>
-
-                </div>
             </div>
         </div>
     </div>
