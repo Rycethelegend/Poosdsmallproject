@@ -12,11 +12,6 @@ let lastName = "";
 
 function doLogin()
 {
-    userId = 1;
-    saveCookie();
-	window.location.href = "contacts.html";
-    return;
-
 	userId = 0;
 	firstName = "";
 	lastName = "";
