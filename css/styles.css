@@ -1,3 +1,4 @@
+
 body {
     font-family: 'Times New Roman', Times, serif;
     background-color: #6f6f6f;
@@ -9,6 +10,12 @@ h1 {
 	text-align: center;
 	color: white;
 	padding: 20px 0 10px 0;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    padding: 20px 0 10px 0;
 }
 
 .box {
@@ -61,4 +68,45 @@ button:hover {
 .link-row {
 	text-align: center;
 	margin-top: 10px;
+}
+
+/* Contacts Page */
+.top-bar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 10px 30px 0 30px;
+}
+
+.top-bar button {
+	width: auto;
+	padding: 16px;
+}
+
+.contacts-UI {
+    font-size: 30px;
+    width: 70%;
+    margin-left: 12.5%;
+    padding: 25px;
+    background-color: #b2b2b2;
+}
+
+.contacts-UI button {
+    padding: 8px 16px;
+}
+
+.contacts-AddUI {
+    text-align: center;
+    font-size: 18px;
+    width: 70%;
+    margin: 18px auto 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #b2b2b2;
+}
+
+.contacts-AddUI button {
+    padding: 8px 16px;
 }
