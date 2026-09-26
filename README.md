@@ -28,5 +28,5 @@ Developed Add and Edit Contacts functionality, SwaggerHub setup and integration.
 Rudolph Antoine - API Developer:
 Developed Search and Delete Endpoints.
 
-Alec Hayes - Database Manager:
+Alec Hayes - Database Engineer:
 Initialized database, provided support for API teams with integration, created test users. Assisted frontend team with API integration.
