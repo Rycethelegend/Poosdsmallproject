@@ -1,14 +1,14 @@
 <?php
 	$inData = getRequestInfo();
 	
-	$contactId = $inData["contactId"]; 
+	$contactId = $inData["id"]; 
 	$firstName = $inData["firstName"];
 	$lastName = $inData["lastName"];
 	$phone = $inData["phone"];
 	$email = $inData["email"];
 	$userId = $inData["userId"];
 
-	$conn = new mysqli("localhost", "YOUR_API_USERNAME", "YOUR_API_PASSWORD", "Poosdbase");
+	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "Poosdbase");
 	if ($conn->connect_error) 
 	{
 		returnWithError( $conn->connect_error );
