@@ -1,0 +1,26 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Contact Manager - Log In</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body onload="redirectIfLoggedIn()">
+
+	<h1>Personal Contact Manager Login</h1>
+
+	<div class="box">
+		<div class="message" id="loginResult"></div>
+
+		<input type="text" id="loginName" placeholder="Username">
+		<input type="password" id="loginPassword" placeholder="Password">
+
+		<button onclick="doLogin()">Log In</button>
+
+		<div class="link-row">
+			<a href="register.html">Don't have an account? Sign up</a>
+		</div>
+	</div>
+
+	<script src="js/login.js"></script>
+</body>
+</html>
