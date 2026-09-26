@@ -65,7 +65,62 @@ function doLogin()
 
 function doRegister()
 {
-    
+    let firstName = document.getElementById("regFirstName").value;
+	let lastName = document.getElementById("regLastName").value;
+	let login = document.getElementById("regLogin").value;
+	let password = document.getElementById("regPassword").value;
+	let confirmPassword = document.getElementById("regConfirmPassword").value;
+
+	document.getElementById("registerResult").innerHTML = "";
+
+	//Check if password is equal to confirm password
+	if (password != confirmPassword) {
+    	document.getElementById("registerResult").innerHTML = "Passwords do not match.";
+    	return;
+	}
+
+	let tmp = {
+        login: login,
+        password: password,
+        confirm_password: confirmPassword,
+        firstName: firstName,
+        lastName: lastName
+    };
+	let jsonPayload = JSON.stringify( tmp );
+
+	let url = urlBase + '/Register.' + extension;
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    try
+    {
+        xhr.onreadystatechange = function()
+        {
+            if (this.readyState == 4 && this.status == 200)
+            {
+                let jsonObject = JSON.parse(xhr.responseText);
+				userId = jsonObject.id;
+
+                if (jsonObject.error != "")
+                {
+                    document.getElementById("registerResult").innerHTML = jsonObject.error;
+                    return;
+                }
+
+                firstName = jsonObject.firstName;
+                lastName = jsonObject.lastName;
+
+                saveCookie();
+                window.location.href = "contacts.html";
+            }
+        };
+        xhr.send(jsonPayload);
+    }
+    catch (err)
+    {
+        document.getElementById("registerResult").innerHTML = err.message;
+    }
 }
 
 function saveCookie()
