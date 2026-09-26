@@ -5,7 +5,7 @@
 ## -- GenAI Use Statement --
 
 Levi Buffington  - GenAI for direction in diagram design, and help with fixing issues/code reviews/ticket design.
-
+Wenhuang Lin - GenAI for help and direction with unfamiliar technologies like SwaggerHub
 
 
 ## -- Team Members And Their Roles --
