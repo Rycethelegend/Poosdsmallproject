@@ -2,13 +2,13 @@
 
 
 
-##-- GenAI Use Statement --
+## -- GenAI Use Statement --
 
 Levi Buffington  - GenAI for direction in diagram design, and help with fixing issues/code reviews/ticket design.
 
 
 
-##-- Team Members And Their Roles --
+## -- Team Members And Their Roles --
 
 Levi Buffington - Project Manager:
 Facilitated planning and meetings, provided support for database creation and assisted API, Provided team tasking via Jira tickets.
