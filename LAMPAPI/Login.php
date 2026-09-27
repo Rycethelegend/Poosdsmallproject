@@ -55,16 +55,25 @@
 
     #Attempt to connect to database
 	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "Poosdbase"); 	
-
+	
 	if( $conn->connect_error )
 	{
         #if issue connecting to database, return error with Json
 		returnWithError( $conn->connect_error );
+		
+	}else if ($inData["login"] == ""){
+			returnWithError("Input a Username");
+	}
+	else if ($inData["password"] == ""){
+			returnWithError("Input a Password");
 	}
     else
     {
         #attempt to find user in database and login, return Json
         $stmt = $conn->prepare("SELECT ID,firstName,lastName FROM Users WHERE Login=? AND Password =?");
+
+		
+		
 		$stmt->bind_param("ss", $inData["login"], md5($inData["password"]));
 		$stmt->execute();
 		$result = $stmt->get_result();
