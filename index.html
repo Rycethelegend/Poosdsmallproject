@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -24,23 +25,23 @@
     <div id="navbar" class="navbar">
         <button class="navbarButton" style="padding-left: 12px;" onclick="redirectIfLoggedIn()">
 
-            <img src="icons/twousers.svg">
+            <img src="images/twousers.svg" alt="">
             <a>Contacts</a>
         </button>
 
         <button class="navbarButton" style="padding-left: 8px;" onclick="doLogout()">
 
-            <img src="icons/logout.svg">
+            <img src="images/logout.svg" alt="">
             <a>Logout</a>
         </button>
     </div>
 
-    <div style="position: absolute; right: 64px; bottom: 16px; width: 30%;">
-        <img src="images/elephan2.png" style="width: 100%;">
+    <div style="position: absolute; right: 64px; bottom: 16px; width: 30%; z-index: -5;">
+        <img src="images/elephan2.png" alt="A strawberry colored elephant with seeds covering its skin." style="width: 100%;">
     </div>
 
     <div style="position: absolute; inset: 0; align-content: end; z-index: -10;">
-        <img src="images/grass/foregrounds_54.png" style="width: 100%;">
+        <img src="images/grass/foregrounds_54.png" alt="A large grass plain where the elephant is standing." style="width: 100%; ">
     </div>
 
     <div style="margin: 32px;">
@@ -54,20 +55,15 @@
         </h2>
 
         <div style="display: flex; gap: 16px;">
-            <button class="colorButton" style="background-color: black; ">
-                <a href="login.html" style="color: white;">
-                    Log into account
-                </a>
+            <button onclick="window.location.replace('login.html');" class="colorButton" style="color: white; background-color: black;">
+                Log into account
             </button>
 
-            <button class="colorButton" style="background-color: transparent; border: 4px solid black;">
-                <a href="register.html" style="color: black;">
-                    Register an account
-                </a>
+            <button onclick="window.location.replace('register.html');" class="colorButton" style="background-color: transparent; border: 4px solid black;">
+                Register an account
             </button>
         </div>
     </div>
-
 
     <script src="js/login.js"></script>
 </body>

@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -115,10 +116,10 @@
                 <div
                     style="width: 40px; height: 100%; display: flex; flex-direction: column; justify-content: center; gap: 12px;">
                     <button class="imageButton editButton">
-                        <img src="icons/pencilwhite.svg" style="width: 100%;">
+                        <img src="images/pencilwhite.svg" alt="" style="width: 100%;">
                     </button>
                     <button class="imageButton deleteButton">
-                        <img src="icons/trashwhite.svg" style="width: 100%;">
+                        <img src="images/trashwhite.svg" alt="" style="width: 100%;">
                     </button>
                 </div>
             </div>
@@ -135,12 +136,12 @@
             <div style="display: flex; gap: 16px;">
                 <button class="colorButton" style="background-color: transparent; border: 4px solid black;"
                     onclick="closeDeleteBox()">
-                    <img src="icons/letterx.svg" style="width: 100%;">
+                    <img src="images/letterx.svg" alt="" style="width: 100%;">
                     <p>Cancel</p>
                 </button>
                 <button class="colorButton" style="background-color: black; color: white;"
                     onclick="finishContactDelete()">
-                    <img src="icons/trashwhite.svg" style="width: 100%;">
+                    <img src="images/trashwhite.svg" alt="" style="width: 100%;">
                     <p>Delete</p>
                 </button>
             </div>
@@ -150,28 +151,28 @@
     <div id="navbar" class="navbar">
         <button class="navbarButton" style="padding-left: 12px;" onclick="redirectIfLoggedIn()">
 
-            <img src="icons/twousers.svg">
+            <img src="images/twousers.svg" alt="">
             <a>Contacts</a>
         </button>
 
         <button class="navbarButton" style="padding-left: 8px;" onclick="doLogout()">
 
-            <img src="icons/logout.svg">
+            <img src="images/logout.svg" alt="">
             <a>Logout</a>
         </button>
     </div>
 
     <div style="position: absolute; right: 64px; bottom: 16px; width: 30%; z-index: -5;">
-        <img src="images/elephan2.png" style="width: 100%;">
+        <img src="images/elephan2.png" alt="A strawberry colored elephant with seeds covering its skin." style="width: 100%;">
     </div>
 
     <div style="position: absolute; inset: 0; align-content: end; z-index: -10;">
-        <img src="images/grass/foregrounds_54.png" style="width: 100%;">
+        <img src="images/grass/foregrounds_54.png" alt="A large grass plain where the elephant is standing." style="width: 100%;">
     </div>
 
-    <div style="position: relative; margin-left: 8px; margin-right: 8px">
+    <main style="position: relative; margin-left: 8px; margin-right: 8px">
 
-        <div id="leftContainer" class="slideIn centerBox">
+        <div id="leftContainer" class="centerBox">
 
             <div style="display: flex; flex-direction: column; max-width: 1000px; width: 100%; gap: 32px;">
 
@@ -192,14 +193,14 @@
                     <button id="search-button" class="colorButton" value="Search"
                         style="background-color: black; padding-left: 8px;" onclick="query()">
 
-                        <img src="icons/searchWhite.svg">
+                        <img src="images/searchWhite.svg" alt="">
                         <h3 style="color:white;">Search</h3>
                     </button>
 
                     <button id="add-button" class="colorButton" value="Add"
                         style="background-color: transparent; border: 4px solid black" onclick="openAddBox()">
 
-                        <img src="icons/adduser.svg">
+                        <img src="images/adduser.svg"  alt="">
                         <h3 style="color:black;">Add</h3>
                     </button>
 
@@ -279,14 +280,14 @@
 
         </div>
 
-        <div id="rightContainer" class="slidePrepare centerBox">
+        <div id="rightContainer" style="display: none;" aria-hidden="true">
 
             <div style="width: 100%; height: 100%; display: flex; background-color: #ff0000;">
 
             </div>
         </div>
 
-    </div>
+    </main>
 
     <script src="js/login.js"></script>
     <script src="js/contacts.js"></script>
