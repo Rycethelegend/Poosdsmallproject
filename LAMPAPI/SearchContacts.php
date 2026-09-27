@@ -14,7 +14,7 @@
     else
     {
         # Search across FirstName, LastName, Phone, and Email for the logged-in UserID
-        //GenAI Disclosure - Input validation and prepared statement deletion query logic -- Levi Buffington
+        //GenAI Disclosure - Refactored SQL prepared statement binding and wildcard search across multiple contact fields -- Levi Buffington
         $stmt = $conn->prepare("SELECT ID, FirstName, LastName, Phone, Email FROM Contacts WHERE UserID=? AND (FirstName LIKE ? OR LastName LIKE ? OR Phone LIKE ? OR Email LIKE ?)");
         $searchVal = "%" . $inData["search"] . "%";
         $stmt->bind_param("issss", $inData["userId"], $searchVal, $searchVal, $searchVal, $searchVal);
