@@ -13,6 +13,7 @@
     }
     else
     {
+        // AI-assisted: Refactored SQL prepared statement binding and wildcard search across multiple contact fields - Levi Buffington
         $stmt = $conn->prepare("DELETE FROM Contacts WHERE ID=? AND UserID=?"); 
         $stmt->bind_param("ii", $contactId, $userId);
         $stmt->execute();
