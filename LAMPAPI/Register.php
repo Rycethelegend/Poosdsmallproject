@@ -71,6 +71,18 @@
 	{
         #if issue connecting to database, return error with Json
 		returnWithError( $conn->connect_error );
+		
+	} else if ($inData["firstName"] == ""){
+			returnWithError("Input a First Name");
+	}
+	else if ($inData["lastName"] == ""){
+			returnWithError("Input a Last Name");
+		
+	} else if ($inData["login"] == ""){
+			returnWithError("Input a Username");
+	}
+	else if ($inData["password"] == ""){
+			returnWithError("Input a Password");
 	}
     else
     {
