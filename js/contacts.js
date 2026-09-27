@@ -89,7 +89,7 @@ function renderList() {
 
         return;
     }
-    
+
     const template = document.getElementById("contactRowTemplate");
 
     for (let i = 0; i < contacts.length; i++) {
@@ -132,11 +132,22 @@ function deleteContact(id) {
     if (contact == null) return;
 
     currentDeleteId = id;
-    openDeleteBox();
+    
+    let userChoice = document.confirm("Deleting a contact is permanent! Continue?");
+    // openDeleteBox();
+    
+    if (userChoice) 
+    {
+        finishContactDelete();
+        document.alert("Contact deleted!");
+    } else 
+    {
+        document.alert("Deletion cancelled.");
+    }
 }
 
 function finishContactDelete() {
-    closeDeleteBox();
+    // closeDeleteBox();
 
     let tmp = { contactId: currentDeleteId, userId: userId };
 
@@ -236,22 +247,19 @@ function saveContact() {
         };
         xhr.send(jsonPayload);
     }
-    catch (err) 
-    {
+    catch (err) {
         showError(err.message);
     }
 }
 
-function showError(message)
-{
+function showError(message) {
     const errorBox = document.getElementById("errorBox");
 
     errorBox.style.display = 'block';
     errorBox.textContent = message;
 }
 
-function clearError()
-{
+function clearError() {
     const errorBox = document.getElementById("errorBox");
 
     errorBox.textContent = "";
@@ -259,13 +267,13 @@ function clearError()
 }
 
 // UI MENUS
-function clearAddBox() 
-{
+
+function clearAddBox() {
     const firstNameBox = document.getElementById("addFirstName");
     const lastNameBox = document.getElementById("addLastName");
     const emailBox = document.getElementById("addEmail");
     const phoneBox = document.getElementById("addPhone");
-    
+
     firstNameBox.value = '';
     lastNameBox.value = '';
     emailBox.value = '';
