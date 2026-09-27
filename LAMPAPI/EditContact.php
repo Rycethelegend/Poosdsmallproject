@@ -15,6 +15,7 @@
 	} 
 	else
 	{
+		// GenAI Disclosure - Input validation and prepared statement deletion query logic - Levi Buffington
 		$stmt = $conn->prepare("UPDATE Contacts SET FirstName=?, LastName=?, Phone=?, Email=? WHERE ID=? AND UserID=?");
 		
 		$stmt->bind_param("ssssii", $firstName, $lastName, $phone, $email, $contactId, $userId);
