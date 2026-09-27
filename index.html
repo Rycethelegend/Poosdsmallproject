@@ -7,7 +7,6 @@
 </head>
 
 <style>
-
     .centerBox {
         /*align-items: center;*/
         margin: 32px;
@@ -18,39 +17,38 @@
         gap: 32px;
         max-width: 1200px;
     }
-
 </style>
 
 <body style="overflow: hidden;">
 
     <div id="navbar" class="navbar">
-        <button class="navbarButton" style="padding-left: 12px;">
+        <button class="navbarButton" style="padding-left: 12px;" onclick="redirectIfLoggedIn()">
 
-            <img src="images/twousers.svg">
-            <a href="contacts.html">Contacts</a>
+            <img src="icons/twousers.svg">
+            <a>Contacts</a>
         </button>
 
         <button class="navbarButton" style="padding-left: 8px;" onclick="doLogout()">
 
-            <img src="images/logout.svg">
+            <img src="icons/logout.svg">
             <a>Logout</a>
         </button>
     </div>
 
+    <div style="position: absolute; right: 64px; bottom: 16px; width: 30%;">
+        <img src="images/elephan2.png" style="width: 100%;">
+    </div>
+
+    <div style="position: absolute; inset: 0; align-content: end; z-index: -10;">
+        <img src="images/grass/foregrounds_54.png" style="width: 100%;">
+    </div>
+
     <div style="margin: 32px;">
-
-        <div style="position: absolute; right: 64px; bottom: 16px; width: 30%;">
-            <img src="images/strawberry_elephant.png" style="width: 100%;">
-        </div>
-
-        <div style="position: absolute; inset: 0; align-content: end; z-index: -10;">
-            <img src="images/grass/foregrounds_54_good.png" style="width: 100%;">
-        </div>
 
         <h1>
             Life is complicated.
         </h1>
-        
+
         <h2>
             Let's help you organize. <it class="z"></it>
         </h2>
@@ -58,13 +56,13 @@
         <div style="display: flex; gap: 16px;">
             <button class="colorButton" style="background-color: black; ">
                 <a href="login.html" style="color: white;">
-                Log into account
+                    Log into account
                 </a>
             </button>
 
             <button class="colorButton" style="background-color: transparent; border: 4px solid black;">
                 <a href="register.html" style="color: black;">
-                Register an account
+                    Register an account
                 </a>
             </button>
         </div>

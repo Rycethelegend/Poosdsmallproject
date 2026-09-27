@@ -9,18 +9,17 @@ let userId = 0;
 let firstName = "";
 let lastName = "";
 
-function adminLogin()
-{
-    userId = 1;
-    firstName = "admin";
-	lastName = "admin";
-
-    saveCookie();
-	window.location.href = "contacts.html";
-}
-
 function doLogin()
 {
+    // userId = 1;
+	// firstName = "admin";
+	// lastName = "admin";
+
+    // saveCookie();
+	// window.location.href = "contacts.html";
+
+    // return;
+
 	userId = 0;
 	firstName = "";
 	lastName = "";

@@ -133,16 +133,16 @@ function deleteContact(id) {
 
     currentDeleteId = id;
     
-    let userChoice = document.confirm("Deleting a contact is permanent! Continue?");
+    let userChoice = window.confirm("Deleting a contact is permanent! Continue?");
     // openDeleteBox();
-    
+
     if (userChoice) 
     {
         finishContactDelete();
-        document.alert("Contact deleted!");
+        window.alert("Contact deleted!");
     } else 
     {
-        document.alert("Deletion cancelled.");
+        window.alert("Deletion cancelled.");
     }
 }
 
