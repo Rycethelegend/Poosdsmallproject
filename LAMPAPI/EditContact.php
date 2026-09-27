@@ -8,7 +8,7 @@
 	$email = $inData["email"];
 	$userId = $inData["userId"];
 
-	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4431", "Poosdbase");
+	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "Poosdbase");
 	if ($conn->connect_error) 
 	{
 		returnWithError( $conn->connect_error );
@@ -20,9 +20,18 @@
 		$stmt->bind_param("ssssii", $firstName, $lastName, $phone, $email, $contactId, $userId);
 		
 		$stmt->execute();
+
+        if ($stmt->affected_rows > 0)
+        {
+            returnWithError("");
+        }
+        else
+        {
+            returnWithError("Contact not found or access denied.");
+        }
+
 		$stmt->close();
 		$conn->close();
-		returnWithError("");
 	}
 
 	function getRequestInfo()
