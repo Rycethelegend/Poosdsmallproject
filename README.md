@@ -1,12 +1,17 @@
 # Poosdsmallproject
 
+## -- Description --
 
+A contact manager webapp created for COP4331C - Processes in Object-Oriented Software Development at UCF, Fall 2026.
+Hosted using a Droplet on DigitalOcean, on an Ubuntu Linux Server with Apache. 
 
-## -- GenAI Use Statement --
+## -- Setup Instructions --
 
-Levi Buffington  - GenAI for direction in diagram design, and help with fixing issues/code reviews/ticket design.
+Be sure to have a domain to connect the droplet to, and have a mysql database on your server with tables for both users and contacts. You can download the files from github and copy them over to your server using FileZilla. You can then update the Nameservers and DNS records between your domain provider and server. and the webapp should be ready to go! 
 
+## -- Access --
 
+The webapp is currently at https://poosdbasecontactmanager.casa/
 
 ## -- Team Members And Their Roles --
 
@@ -30,3 +35,12 @@ Developed Search and Delete Endpoints.
 
 Alec Hayes - Database Engineer:
 Initialized database, provided support for API teams with integration, created test users. Assisted frontend team with API integration.
+
+
+
+
+
+## -- GenAI Use Statement --
+
+Levi Buffington  - GenAI for direction in diagram design, and help with fixing issues/code reviews/ticket design.
+
