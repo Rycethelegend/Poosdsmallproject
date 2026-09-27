@@ -45,7 +45,7 @@ Initialized database, provided support for API teams with integration, created t
 
 This project was developed with assistance from generative AI tools:
 
-# Levi Buffington
+### Levi Buffington
 - **Tool**: Gemini 3.6 Flash
 - **Dates**: August 2026 – September 2026
 - **Scope**: API endpoint refactoring in code review stage, database ERD field direction and system design diagram generation with Mermaid.
