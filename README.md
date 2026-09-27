@@ -40,7 +40,16 @@ Initialized database, provided support for API teams with integration, created t
 
 
 
-## -- GenAI Use Statement --
 
-Levi Buffington  - GenAI for direction in diagram design, and help with fixing issues/code reviews/ticket design.
+## AI Assistance Disclosure
+
+This project was developed with assistance from generative AI tools:
+
+# Levi Buffington
+- **Tool**: Gemini 3.6 Flash
+- **Dates**: August 2026 – September 2026
+- **Scope**: API endpoint refactoring in code review stage, database ERD field direction and system design diagram generation with Mermaid.
+- **Nature of Use**: Code refactoring, syntax debugging system setup modeling, and documentation assistance.
+
+All AI-generated code and diagrams were reviewed, tested on the DigitalOcean LAMP environment, and validated against assignment rubric requirements.
 
