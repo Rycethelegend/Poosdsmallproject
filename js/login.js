@@ -23,15 +23,22 @@ function doLogin()
 	userId = 0;
 	firstName = "";
 	lastName = "";
+
+    let loginResult = document.getElementById("loginResult");
 	
-	let login = document.getElementById("regFirstName").value;
-	let password = document.getElementById("regLastName").value;
-//	var hash = md5( password );
-	
-	document.getElementById("registerResult").innerHTML = "";
+	let login = document.getElementById("regFirstName").value.trim();
+	let password = document.getElementById("regLastName").value.trim();
+
+    loginResult.innerHTML = "";
+
+    if (login === "") { loginResult.innerHTML = "Must enter a valid username."; return; }
+
+    if (password === "") { loginResult.innerHTML = "Must enter a valid password."; return; }
+
+    //	var hash = md5( password );
 
 	let tmp = {login:login,password:password};
-//	var tmp = {login:login,password:hash};
+    //	var tmp = {login:login,password:hash};
 	let jsonPayload = JSON.stringify( tmp );
 	
 	let url = urlBase + '/Login.' + extension;
@@ -50,7 +57,7 @@ function doLogin()
 		
 				if( userId < 1 )
 				{		
-					document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
+					loginResult.innerHTML = "User/Password combination incorrect";
 					return;
 				}
 		
@@ -66,26 +73,31 @@ function doLogin()
 	}
 	catch(err)
 	{
-		document.getElementById("loginResult").innerHTML = err.message;
+		loginResult.innerHTML = err.message;
 	}
 
 }
 
 function doRegister()
 {
+    let registerResult = document.getElementById("registerResult");
+
     let firstName = document.getElementById("regFirstName").value;
 	let lastName = document.getElementById("regLastName").value;
-	let login = document.getElementById("regLogin").value;
-	let password = document.getElementById("regPassword").value;
-	let confirmPassword = document.getElementById("regConfirmPassword").value;
+	let login = document.getElementById("regLogin").value.trim();
+	let password = document.getElementById("regPassword").value.trim();
+	let confirmPassword = document.getElementById("regConfirmPassword").value.trim();
 
-	document.getElementById("registerResult").innerHTML = "";
+	registerResult.innerHTML = "";
 
-	//Check if password is equal to confirm password
-	if (password != confirmPassword) {
-    	document.getElementById("registerResult").innerHTML = "Passwords do not match.";
-    	return;
-	}
+    if (firstName === "") { registerResult.innerHTML = "Must enter a first name."; return; }
+    // No check for last name (some people dont have them)
+
+    if (login === "") { registerResult.innerHTML = "Must enter a valid username."; return; }
+    if (password === "") { registerResult.innerHTML = "Must enter a valid password."; return; }
+
+	// Check if password is equal to confirm password
+	if (password != confirmPassword) { registerResult.innerHTML = "Passwords do not match."; return; }
 
 	let tmp = {
         login: login,
@@ -112,7 +124,7 @@ function doRegister()
 
                 if (jsonObject.error != "")
                 {
-                    document.getElementById("registerResult").innerHTML = jsonObject.error;
+                    registerResult.innerHTML = jsonObject.error;
                     return;
                 }
 
@@ -127,7 +139,7 @@ function doRegister()
     }
     catch (err)
     {
-        document.getElementById("registerResult").innerHTML = err.message;
+        registerResult.innerHTML = err.message;
     }
 }
 

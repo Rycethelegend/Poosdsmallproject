@@ -19,9 +19,7 @@ function query() {
 
     clearError();
     searchContacts();
-    renderList();
 }
-
 
 
 // SEARCH CONTACTS
@@ -160,8 +158,10 @@ function finishContactDelete() {
     try {
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                // document.getElementById("colorAddResult").innerHTML = "Color has been added";
-                // message: delete successful
+
+                // DELETE SUCCESSFUL
+                // REFRESH
+                query();
             }
         };
         xhr.send(jsonPayload);
@@ -209,9 +209,12 @@ function finishContactEdit() {
     try {
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                // document.getElementById("colorAddResult").innerHTML = "Color has been added";
 
                 closeAddBox();
+
+                // EDIT SUCCESSFUL
+                // REFRESH
+                query();
             }
         };
         xhr.send(jsonPayload);
@@ -240,9 +243,12 @@ function saveContact() {
     try {
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                // document.getElementById("colorAddResult").innerHTML = "Color has been added";
-
+                
                 closeAddBox();
+
+                // ADD SUCCESSFUL
+                // REFRESH
+                query();
             }
         };
         xhr.send(jsonPayload);
